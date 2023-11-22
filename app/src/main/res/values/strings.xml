@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Gorena</string>
+
+    <string name="signup">Daftar</string>
+    <string name="login">Masuk</string>
+    <string name="logout">Keluar</string>
+
+    <string name="name">Nama</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+
+    <string name="title_welcome_page">Selamat datang di Gorena!</string>
+    <string name="message_welcome_page">Temukan dan pesan lapangan olahraga favorit dengan mudah. Olahraga gak nanti-nanti!</string>
+    <string name="message_login_page">Masukkan dulu datamu ya</string>
+    <string name="message_main_page">Mau olahraga apa hari ini, maniez?</string>
+
+    <string name="greeting">Halo %1$s,</string>
+
+    <string name="move_to_signup">Belum punya akun?</string>
+    <string name="move_to_login">Sudah punya akun?</string>
+
+    <string name="welcome_image_view">Welcome Image View</string>
+
+</resources>
