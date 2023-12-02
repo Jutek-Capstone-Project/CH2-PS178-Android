@@ -1,18 +1,25 @@
-package com.agilizzulhaq.ch2_ps178_android.view.main
+package com.bangkit.ch2_ps178_android.view.main
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.agilizzulhaq.ch2_ps178_android.databinding.ActivityMainBinding
-import com.agilizzulhaq.ch2_ps178_android.view.ViewModelFactory
-import com.agilizzulhaq.ch2_ps178_android.view.welcome.WelcomeActivity
+import androidx.fragment.app.Fragment
+import com.bangkit.ch2_ps178_android.R
+import com.bangkit.ch2_ps178_android.databinding.ActivityMainBinding
+import com.bangkit.ch2_ps178_android.view.ViewModelFactory
+import com.bangkit.ch2_ps178_android.view.history.HistoryFragment
+import com.bangkit.ch2_ps178_android.view.home.HomeFragment
+import com.bangkit.ch2_ps178_android.view.profile.ProfileFragment
+import com.bangkit.ch2_ps178_android.view.welcome.WelcomeActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
     private val viewModel by viewModels<MainViewModel> {
         ViewModelFactory.getInstance(this)
     }
     private lateinit var binding: ActivityMainBinding
+    lateinit var bottomNav: BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,13 +35,34 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        setupAction()
-    }
+        bottomNav = findViewById<BottomNavigationView>(R.id.bottomNav)
+        bottomNav.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.home -> {
+                    loadFragment(HomeFragment())
+                    true
+                }
+                R.id.history -> {
+                    loadFragment(HistoryFragment())
+                    true
+                }
+                R.id.profile -> {
+                    loadFragment(ProfileFragment())
+                    true
+                }
 
-    private fun setupAction() {
-        binding.logoutButton.setOnClickListener {
-            viewModel.logout()
+                else -> false
+            }
         }
     }
 
+    fun logout() {
+        viewModel.logout()
+    }
+
+    private fun loadFragment(fragment: Fragment) {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.container, fragment)
+        transaction.commit()
+    }
 }

@@ -1,4 +1,4 @@
-package com.agilizzulhaq.ch2_ps178_android.data.model
+package com.bangkit.ch2_ps178_android.data.model
 
 data class UserModel(
     val email: String,

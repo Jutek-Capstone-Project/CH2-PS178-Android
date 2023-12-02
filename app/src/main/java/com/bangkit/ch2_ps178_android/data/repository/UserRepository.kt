@@ -1,7 +1,7 @@
-package com.agilizzulhaq.ch2_ps178_android.data.repository
+package com.bangkit.ch2_ps178_android.data.repository
 
-import com.agilizzulhaq.ch2_ps178_android.data.model.UserModel
-import com.agilizzulhaq.ch2_ps178_android.data.preference.UserPreference
+import com.bangkit.ch2_ps178_android.data.model.UserModel
+import com.bangkit.ch2_ps178_android.data.preference.UserPreference
 import kotlinx.coroutines.flow.Flow
 
 class UserRepository private constructor(private val userPreference: UserPreference) {

@@ -1,12 +1,12 @@
-package com.agilizzulhaq.ch2_ps178_android.view
+package com.bangkit.ch2_ps178_android.view
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.agilizzulhaq.ch2_ps178_android.data.repository.UserRepository
-import com.agilizzulhaq.ch2_ps178_android.di.Injection
-import com.agilizzulhaq.ch2_ps178_android.view.login.LoginViewModel
-import com.agilizzulhaq.ch2_ps178_android.view.main.MainViewModel
+import com.bangkit.ch2_ps178_android.data.repository.UserRepository
+import com.bangkit.ch2_ps178_android.di.Injection
+import com.bangkit.ch2_ps178_android.view.login.LoginViewModel
+import com.bangkit.ch2_ps178_android.view.main.MainViewModel
 
 class ViewModelFactory(private val repository: UserRepository) : ViewModelProvider.NewInstanceFactory() {
 

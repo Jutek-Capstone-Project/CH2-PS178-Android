@@ -1,4 +1,4 @@
-package com.agilizzulhaq.ch2_ps178_android.data.preference
+package com.bangkit.ch2_ps178_android.data.preference
 
 import android.content.Context
 import androidx.datastore.core.DataStore
@@ -7,7 +7,7 @@ import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
-import com.agilizzulhaq.ch2_ps178_android.data.model.UserModel
+import com.bangkit.ch2_ps178_android.data.model.UserModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 

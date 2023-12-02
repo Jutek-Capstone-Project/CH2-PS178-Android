@@ -1,14 +1,14 @@
-package com.agilizzulhaq.ch2_ps178_android.view.signup
+package com.bangkit.ch2_ps178_android.view.signup
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import com.agilizzulhaq.ch2_ps178_android.R
-import com.agilizzulhaq.ch2_ps178_android.databinding.ActivitySignupBinding
-import com.agilizzulhaq.ch2_ps178_android.view.login.LoginActivity
-import com.agilizzulhaq.ch2_ps178_android.view.welcome.WelcomeActivity
+import com.bangkit.ch2_ps178_android.R
+import com.bangkit.ch2_ps178_android.databinding.ActivitySignupBinding
+import com.bangkit.ch2_ps178_android.view.login.LoginActivity
+import com.bangkit.ch2_ps178_android.view.welcome.WelcomeActivity
 
 class SignupActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignupBinding

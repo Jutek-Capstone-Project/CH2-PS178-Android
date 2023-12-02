@@ -1,4 +1,4 @@
-package com.agilizzulhaq.ch2_ps178_android
+package com.bangkit.ch2_ps178_android
 
 import org.junit.Test
 

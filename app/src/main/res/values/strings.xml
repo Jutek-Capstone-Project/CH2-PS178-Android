@@ -21,4 +21,8 @@
 
     <string name="welcome_image_view">Welcome Image View</string>
 
+    <string name="home">Beranda</string>
+    <string name="history">Riwayat</string>
+    <string name="profile">Profil</string>
+
 </resources>

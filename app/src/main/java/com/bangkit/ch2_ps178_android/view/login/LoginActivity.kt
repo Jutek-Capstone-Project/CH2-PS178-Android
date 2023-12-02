@@ -1,4 +1,4 @@
-package com.agilizzulhaq.ch2_ps178_android.view.login
+package com.bangkit.ch2_ps178_android.view.login
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,13 +6,13 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import com.agilizzulhaq.ch2_ps178_android.R
-import com.agilizzulhaq.ch2_ps178_android.data.model.UserModel
-import com.agilizzulhaq.ch2_ps178_android.databinding.ActivityLoginBinding
-import com.agilizzulhaq.ch2_ps178_android.view.ViewModelFactory
-import com.agilizzulhaq.ch2_ps178_android.view.main.MainActivity
-import com.agilizzulhaq.ch2_ps178_android.view.signup.SignupActivity
-import com.agilizzulhaq.ch2_ps178_android.view.welcome.WelcomeActivity
+import com.bangkit.ch2_ps178_android.R
+import com.bangkit.ch2_ps178_android.data.model.UserModel
+import com.bangkit.ch2_ps178_android.databinding.ActivityLoginBinding
+import com.bangkit.ch2_ps178_android.view.ViewModelFactory
+import com.bangkit.ch2_ps178_android.view.main.MainActivity
+import com.bangkit.ch2_ps178_android.view.signup.SignupActivity
+import com.bangkit.ch2_ps178_android.view.welcome.WelcomeActivity
 
 class LoginActivity : AppCompatActivity() {
     private val viewModel by viewModels<LoginViewModel> {
