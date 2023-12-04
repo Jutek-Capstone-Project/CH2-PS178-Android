@@ -5,7 +5,10 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.bangkit.ch2_ps178_android.R
+import com.bangkit.ch2_ps178_android.data.model.Base_model
 import com.bangkit.ch2_ps178_android.databinding.ActivityMainBinding
 import com.bangkit.ch2_ps178_android.view.ViewModelFactory
 import com.bangkit.ch2_ps178_android.view.history.HistoryFragment
@@ -13,6 +16,8 @@ import com.bangkit.ch2_ps178_android.view.home.HomeFragment
 import com.bangkit.ch2_ps178_android.view.profile.ProfileFragment
 import com.bangkit.ch2_ps178_android.view.welcome.WelcomeActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.bangkit.ch2_ps178_android.data.adapter.MainAdapter
+import com.bangkit.ch2_ps178_android.data.dataclass.MainAdapter_row
 
 class MainActivity : AppCompatActivity() {
     private val viewModel by viewModels<MainViewModel> {
@@ -35,6 +40,13 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+
+
+
+
+        //Load fragment secara default
+        loadFragment(HomeFragment())
+
         bottomNav = findViewById<BottomNavigationView>(R.id.bottomNav)
         bottomNav.setOnItemSelectedListener {
             when (it.itemId) {
@@ -51,7 +63,9 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
 
-                else -> false
+                else -> {
+                    false
+                }
             }
         }
     }
@@ -65,4 +79,5 @@ class MainActivity : AppCompatActivity() {
         transaction.replace(R.id.container, fragment)
         transaction.commit()
     }
+
 }
