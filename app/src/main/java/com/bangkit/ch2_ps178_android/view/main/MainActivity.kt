@@ -40,10 +40,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
-
-
-
         //Load fragment secara default
         loadFragment(HomeFragment())
 
