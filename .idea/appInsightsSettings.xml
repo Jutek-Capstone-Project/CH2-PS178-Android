@@ -9,9 +9,9 @@
               <option name="connection">
                 <ConnectionSetting>
                   <option name="appId" value="com.bangkit.ch2_ps178_android" />
-                  <option name="mobileSdkAppId" value="1:475543922963:android:d49318548d2881f56dd2e6" />
-                  <option name="projectId" value="jutek-capstone-project" />
-                  <option name="projectNumber" value="475543922963" />
+                  <option name="mobileSdkAppId" value="1:458781415980:android:6ccf9f7c02b7782add0f89" />
+                  <option name="projectId" value="gorena-60ebb" />
+                  <option name="projectNumber" value="458781415980" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
