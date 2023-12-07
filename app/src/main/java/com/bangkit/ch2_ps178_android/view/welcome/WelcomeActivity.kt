@@ -8,6 +8,7 @@ import com.bangkit.ch2_ps178_android.view.login.LoginActivity
 import com.bangkit.ch2_ps178_android.view.signup.SignupActivity
 
 class WelcomeActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityWelcomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

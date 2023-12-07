@@ -17,7 +17,7 @@
         android:theme="@style/Theme.CH2PS178Android"
         tools:targetApi="31">
         <activity
-            android:name=".view.detail_lapangan.Detail_lapangan"
+            android:name=".view.detail.DetailActivity"
             android:exported="false" />
         <activity
             android:name=".view.welcome.WelcomeActivity"
@@ -27,7 +27,7 @@
             android:exported="false" />
         <activity
             android:name=".view.login.LoginActivity"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".view.main.MainActivity"
             android:exported="true">

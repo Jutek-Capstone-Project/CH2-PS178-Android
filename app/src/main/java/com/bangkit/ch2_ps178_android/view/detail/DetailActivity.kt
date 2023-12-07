@@ -1,4 +1,4 @@
-package com.bangkit.ch2_ps178_android.view.detail_lapangan
+package com.bangkit.ch2_ps178_android.view.detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

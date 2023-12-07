@@ -22,14 +22,4 @@ class HistoryFragment : Fragment() {
     ): View? {
         return inflater.inflate(R.layout.fragment_history, container, false)
     }
-
-    companion object {
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            HistoryFragment().apply {
-                arguments = Bundle().apply {
-
-                }
-            }
-    }
 }

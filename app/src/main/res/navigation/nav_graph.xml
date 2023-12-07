@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.bangkit.ch2_ps178_android.view.detail_lapangan.FirstFragment"
+        android:name="com.bangkit.ch2_ps178_android.view.detail.FirstFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first" >
 
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.bangkit.ch2_ps178_android.view.detail_lapangan.SecondFragment"
+        android:name="com.bangkit.ch2_ps178_android.view.detail.SecondFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second" >
 

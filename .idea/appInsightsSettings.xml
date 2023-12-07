@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.bangkit.ch2_ps178_android" />
+                  <option name="mobileSdkAppId" value="1:475543922963:android:d49318548d2881f56dd2e6" />
+                  <option name="projectId" value="jutek-capstone-project" />
+                  <option name="projectNumber" value="475543922963" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

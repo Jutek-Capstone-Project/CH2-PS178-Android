@@ -8,15 +8,15 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bangkit.ch2_ps178_android.R
-import com.bangkit.ch2_ps178_android.data.dataclass.MainAdapter_row
+import com.bangkit.ch2_ps178_android.data.dataclass.MainAdapterRow
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.google.android.material.imageview.ShapeableImageView
 
-class MainAdapter( private val itemClickListener: (MainAdapter_row, CardView) -> Unit) :
+class MainAdapter( private val itemClickListener: (MainAdapterRow, CardView) -> Unit) :
     RecyclerView.Adapter<MainAdapter.ViewHolder>() {
 
-    var itemList : List<MainAdapter_row> = emptyList()
+    var itemList : List<MainAdapterRow> = emptyList()
 
     // Inner class ViewHolder
     inner class CustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -92,7 +92,7 @@ class MainAdapter( private val itemClickListener: (MainAdapter_row, CardView) ->
         return itemList.size
     }
 
-    fun submitList(newItems: List<MainAdapter_row>) {
+    fun submitList(newItems: List<MainAdapterRow>) {
         itemList = newItems
         notifyDataSetChanged()
     }

@@ -67,5 +67,7 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="user_name">Nama User</string>
+    <string name="email_user">Email User</string>
 
 </resources>
