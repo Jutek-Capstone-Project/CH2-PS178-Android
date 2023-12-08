@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.gms.google-services")
+
 }
 
 android {
@@ -59,5 +60,11 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
+
+//    Untuk library glide, mengkonversi string menjadi source gambar
     annotationProcessor("com.github.bumptech.glide:compiler:4.12.0")
+
+    //  Untuk library sweetalert, agar modal tampak bagus
+
+    implementation ("com.github.f0ris.sweetalert:library:1.6.2")
 }

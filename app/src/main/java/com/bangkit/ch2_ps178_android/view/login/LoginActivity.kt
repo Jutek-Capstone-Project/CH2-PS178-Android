@@ -11,6 +11,7 @@ import android.widget.Toast.LENGTH_SHORT
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.bangkit.ch2_ps178_android.R
+import com.bangkit.ch2_ps178_android.data.model.BaseModel
 import com.bangkit.ch2_ps178_android.databinding.ActivityLoginBinding
 import com.bangkit.ch2_ps178_android.view.main.MainActivity
 import com.bangkit.ch2_ps178_android.view.signup.SignupActivity
@@ -54,7 +55,7 @@ class LoginActivity : AppCompatActivity() {
             if (editEmail.text.isNotEmpty() && editPassword.text.isNotEmpty()) {
                 loginProcess()
             } else {
-                Toast.makeText(this, "Silakan isi email dan password terlebih dahulu", LENGTH_SHORT).show()
+                BaseModel.swal(this, "Silakan isi email dan password terlebih dahulu")
             }
         }
 

@@ -11,6 +11,7 @@ import android.widget.Toast.LENGTH_SHORT
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.bangkit.ch2_ps178_android.R
+import com.bangkit.ch2_ps178_android.data.model.BaseModel
 import com.bangkit.ch2_ps178_android.databinding.ActivitySignupBinding
 import com.bangkit.ch2_ps178_android.view.login.LoginActivity
 import com.bangkit.ch2_ps178_android.view.main.MainActivity
@@ -57,7 +58,8 @@ class SignupActivity : AppCompatActivity() {
             if (editName.text.isNotEmpty() && editEmail.text.isNotEmpty() && editPassword.text.isNotEmpty()) {
                 signupProcess()
             } else {
-                Toast.makeText(this, "Silakan lengkapi semua data!", LENGTH_SHORT).show()
+                BaseModel.swal(this, "Silakan lengkapi semua data!")
+//                Toast.makeText(this, "Silakan lengkapi semua data!", LENGTH_SHORT).show()
             }
         }
 
@@ -65,6 +67,7 @@ class SignupActivity : AppCompatActivity() {
             startActivity(Intent(this, LoginActivity::class.java))
             finish()
         }
+
 
         setupView()
     }
@@ -98,6 +101,7 @@ class SignupActivity : AppCompatActivity() {
                 Toast.makeText(this, error.localizedMessage, LENGTH_SHORT).show()
             }
     }
+
 
     private fun setupView() {
         val toolbar: Toolbar = findViewById(R.id.tb_signup_back)

@@ -1,5 +1,6 @@
 package com.bangkit.ch2_ps178_android.view.home
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -20,6 +21,8 @@ class HomeFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
     }
+    
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
