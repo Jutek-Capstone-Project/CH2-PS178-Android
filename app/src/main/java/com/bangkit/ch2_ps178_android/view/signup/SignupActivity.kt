@@ -59,7 +59,6 @@ class SignupActivity : AppCompatActivity() {
                 signupProcess()
             } else {
                 BaseModel.swal(this, "Silakan lengkapi semua data!")
-//                Toast.makeText(this, "Silakan lengkapi semua data!", LENGTH_SHORT).show()
             }
         }
 

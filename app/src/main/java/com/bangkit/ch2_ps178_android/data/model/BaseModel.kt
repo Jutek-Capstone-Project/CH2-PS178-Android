@@ -2,7 +2,9 @@ package com.bangkit.ch2_ps178_android.data.model
 
 import android.content.Context
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import cn.pedant.SweetAlert.SweetAlertDialog
+import com.bangkit.ch2_ps178_android.R
 
 class BaseModel {
     companion object {
@@ -23,12 +25,16 @@ class BaseModel {
 
             var sweetAlertDialog = SweetAlertDialog(context, SweetAlertDialog.NORMAL_TYPE)
 
-            if( param_opt == "success" ){
-                sweetAlertDialog = SweetAlertDialog(context, SweetAlertDialog.SUCCESS_TYPE)
-            }else if( param_opt == "warning" ){
-                sweetAlertDialog = SweetAlertDialog(context, SweetAlertDialog.WARNING_TYPE)
-            }else if( param_opt == "danger" ){
-                sweetAlertDialog = SweetAlertDialog(context, SweetAlertDialog.ERROR_TYPE)
+            when (param_opt) {
+                "success" -> {
+                    sweetAlertDialog = SweetAlertDialog(context, SweetAlertDialog.SUCCESS_TYPE)
+                }
+                "warning" -> {
+                    sweetAlertDialog = SweetAlertDialog(context, SweetAlertDialog.WARNING_TYPE)
+                }
+                "danger" -> {
+                    sweetAlertDialog = SweetAlertDialog(context, SweetAlertDialog.ERROR_TYPE)
+                }
             }
 
             sweetAlertDialog.titleText = title
@@ -38,8 +44,8 @@ class BaseModel {
                 // Aksi yang akan diambil ketika tombol OK diklik
                 sDialog.dismissWithAnimation()
             }
+
             sweetAlertDialog.show()
         }
-
     }
 }

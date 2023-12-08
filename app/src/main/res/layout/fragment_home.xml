@@ -16,7 +16,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingLeft="20dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
             tools:layout_editor_absoluteX="1dp"
             tools:layout_editor_absoluteY="1dp">
 
@@ -33,7 +34,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
 
                 <TextView
                     android:id="@+id/textView"
@@ -46,9 +48,9 @@
 
                 <ImageView
                     android:id="@+id/imageView"
-                    android:layout_width="70dp"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="-80dp"
+                    android:layout_width="30dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="-80dp"
                     android:layout_weight="1"
                     android:src="@drawable/ic_arrow_right"
                     app:srcCompat="@drawable/ic_arrow_right" />
@@ -64,51 +66,49 @@
 
                 <Button
                     android:id="@+id/btn_semua"
-                    android:layout_width="100dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginRight="9dp"
+                    android:layout_marginEnd="9dp"
                     android:layout_weight="1"
                     android:text="Semua"
-                    android:textSize="7dp" />
+                    android:textSize="10sp" />
 
                 <Button
                     android:id="@+id/btn_sepakbola"
-                    android:layout_width="100dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginRight="9dp"
+                    android:layout_marginEnd="9dp"
                     android:layout_weight="1"
                     android:text="Sepakbola"
-                    android:textSize="7dp" />
+                    android:textSize="10sp" />
 
                 <Button
                     android:id="@+id/btn_badminton"
-                    android:layout_width="100dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginRight="9dp"
+                    android:layout_marginEnd="9dp"
                     android:layout_weight="1"
                     android:text="Badminton"
-                    android:textSize="7dp" />
+                    android:textSize="10sp" />
 
                 <Button
                     android:id="@+id/btn_futsal"
-                    android:layout_width="100dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginRight="9dp"
+                    android:layout_marginEnd="9dp"
                     android:layout_weight="1"
                     android:text="Futsal"
-                    android:textSize="7dp" />
-
+                    android:textSize="10sp" />
             </LinearLayout>
-
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/data_list"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-
             </androidx.recyclerview.widget.RecyclerView>
 
         </LinearLayout>
 
     </RelativeLayout>
+
 </FrameLayout>
