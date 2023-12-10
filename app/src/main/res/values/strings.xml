@@ -24,7 +24,7 @@
     <string name="home">Beranda</string>
     <string name="history">Riwayat</string>
     <string name="profile">Profil</string>
-    <string name="title_activity_detail_lapangan">Detail_lapangan</string>
+    <string name="title_activity_detail_lapangan">Detail Lapangan</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
