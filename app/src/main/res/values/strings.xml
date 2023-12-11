@@ -69,5 +69,7 @@
     </string>
     <string name="user_name">Nama User</string>
     <string name="email_user">Email User</string>
+    <string name="profile_user">profile_user</string>
+    <string name="profile_edit">profile_edit</string>
 
 </resources>
