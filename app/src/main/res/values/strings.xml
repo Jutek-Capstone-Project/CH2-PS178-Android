@@ -72,5 +72,7 @@
     <string name="email_user">Email User</string>
     <string name="profile_user">profile_user</string>
     <string name="profile_edit">profile_edit</string>
+    <string name="theme">Tema</string>
+    <string name="language">Bahasa</string>
 
 </resources>
