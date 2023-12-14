@@ -7,7 +7,15 @@ import cn.pedant.SweetAlert.SweetAlertDialog
 import com.bangkit.ch2_ps178_android.R
 
 class BaseModel {
+
+
+
     companion object {
+        var BASE_URL : String
+
+        init{
+            this.BASE_URL = "https://silent-fuze-400506.et.r.appspot.com/"
+        }
         fun toast(context : Context, msg: String) {
             // Buat objek Toast dengan pesan dan durasi yang diinginkan
             val toast = Toast.makeText(context, msg, Toast.LENGTH_SHORT)

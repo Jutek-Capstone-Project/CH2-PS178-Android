@@ -45,8 +45,14 @@ dependencies {
     implementation("com.google.android.material:material:1.10.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.datastore:datastore-preferences:1.0.0")
+
+
+    //View model
+
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
+
+
     implementation("androidx.activity:activity-ktx:1.8.1")
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.5")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.5")
@@ -69,4 +75,16 @@ dependencies {
     //  Untuk library sweetalert, agar modal tampak bagus
 
     implementation ("com.github.f0ris.sweetalert:library:1.6.2")
+
+    //Paging 3
+    implementation("androidx.paging:paging-runtime-ktx:3.1.0")
+
+
+    //Retrofit
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    //Logging debug api
+    implementation ("com.squareup.okhttp3:okhttp:4.9.1")
+    implementation ("com.squareup.okhttp3:logging-interceptor:4.9.1")
+
 }

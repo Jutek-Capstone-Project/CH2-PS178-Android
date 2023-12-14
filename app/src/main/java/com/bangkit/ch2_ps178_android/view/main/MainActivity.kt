@@ -32,14 +32,17 @@ class MainActivity : AppCompatActivity(), ProfileFragment.LogoutListener {
 
         bottomNav = binding.bottomNav
 
-        val firebaseUser = firebaseAuth.currentUser
-        if (firebaseUser != null) {
-            setupFragments()
-            setupBottomNavigation()
-        } else {
-            startActivity(Intent(this, WelcomeActivity::class.java))
-            finish()
-        }
+        setupFragments()
+
+
+//        val firebaseUser = firebaseAuth.currentUser
+//        if (firebaseUser != null) {
+//            setupFragments()
+//            setupBottomNavigation()
+//        } else {
+//            startActivity(Intent(this, WelcomeActivity::class.java))
+//            finish()
+//        }
     }
 
     private fun setupFragments() {
