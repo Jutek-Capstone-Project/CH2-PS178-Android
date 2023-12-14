@@ -74,5 +74,7 @@
     <string name="profile_edit">profile_edit</string>
     <string name="theme">Tema</string>
     <string name="language">Bahasa</string>
+    <string name="about_us">Tentang Kami</string>
+    <string name="help_center">Pusat Bantuan</string>
 
 </resources>
