@@ -1,31 +1,24 @@
 package com.bangkit.ch2_ps178_android.view.detail
 
-import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.GridLayout
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import com.bangkit.ch2_ps178_android.R
-import cn.pedant.SweetAlert.SweetAlertDialog
 import com.bangkit.ch2_ps178_android.data.dataclass.MainAdapterRow
-import com.bangkit.ch2_ps178_android.data.model.BaseModel
 import com.bangkit.ch2_ps178_android.databinding.ActivityDetailBinding
-import com.bangkit.ch2_ps178_android.databinding.ActivitySignupBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class DetailActivity : AppCompatActivity() {
 
-//    private lateinit var binding: ActivityDetailBinding
+    private lateinit var binding: ActivityDetailBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-//        setContentView(binding.root)
-        setContentView(R.layout.activity_detail)
-
+        binding = ActivityDetailBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val receivedIntent = intent
         if (receivedIntent != null && receivedIntent.hasExtra("data_detail")) {

@@ -4,45 +4,198 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/image_home_background"
     tools:context=".view.home.HomeFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <!--        Ini layout khusus untuk recyleview -->
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingStart="20dp"
-            android:paddingEnd="20dp"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="1dp">
+            android:paddingEnd="20dp">
+
+            <com.google.android.material.search.SearchBar
+                android:id="@+id/search_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:hint="@string/search_text" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:paddingTop="20dp">
 
-                <SearchView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                <GridLayout
+                    android:id="@+id/grid_lapangan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:columnCount="4"
+                    android:orientation="horizontal"
+                    android:rowCount="2">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_semua"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="15dp"
+                        android:layout_gravity="center"
+                        app:cardBackgroundColor="@color/orange700"
+                        app:cardCornerRadius="15dp">
+
+                        <ImageView
+                            android:id="@+id/semua"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/all"
+                            app:srcCompat="@drawable/ic_all" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_sepakbola"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="15dp"
+                        app:cardBackgroundColor="@color/orange700"
+                        app:cardCornerRadius="15dp">
+
+                        <ImageView
+                            android:id="@+id/sepakbola"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/football"
+                            app:srcCompat="@drawable/ic_football" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_futsal"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="15dp"
+                        app:cardBackgroundColor="@color/orange700"
+                        app:cardCornerRadius="15dp">
+
+                        <ImageView
+                            android:id="@+id/futsal"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/futsal"
+                            app:srcCompat="@drawable/ic_futsal" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_badminton"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="15dp"
+                        app:cardBackgroundColor="@color/orange700"
+                        app:cardCornerRadius="15dp">
+
+                        <ImageView
+                            android:id="@+id/badminton"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/badminton"
+                            app:srcCompat="@drawable/ic_badminton" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_voli"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="15dp"
+                        app:cardBackgroundColor="@color/orange700"
+                        app:cardCornerRadius="15dp">
+
+                        <ImageView
+                            android:id="@+id/voli"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/volley"
+                            app:srcCompat="@drawable/ic_volley" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_basket"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="15dp"
+                        app:cardBackgroundColor="@color/orange700"
+                        app:cardCornerRadius="15dp">
+
+                        <ImageView
+                            android:id="@+id/basket"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/basketball"
+                            app:srcCompat="@drawable/ic_basketball" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_tenis"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="15dp"
+                        app:cardBackgroundColor="@color/orange700"
+                        app:cardCornerRadius="15dp">
+
+                        <ImageView
+                            android:id="@+id/tenis"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/tenis"
+                            app:srcCompat="@drawable/ic_tennis" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_lainnya"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="15dp"
+                        app:cardBackgroundColor="@color/orange700"
+                        app:cardCornerRadius="15dp">
+
+                        <ImageView
+                            android:id="@+id/lainnya"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/lainnya"
+                            app:srcCompat="@drawable/ic_other" />
+                    </androidx.cardview.widget.CardView>
+
+                </GridLayout>
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:gravity="center_vertical">
+                android:gravity="center_vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp">
 
                 <TextView
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Rekomendasi Untukmu"
+                    android:text="@string/home_text"
                     android:textSize="25sp"
                     android:textStyle="bold" />
 
@@ -50,55 +203,10 @@
                     android:id="@+id/imageView"
                     android:layout_width="30dp"
                     android:layout_height="20dp"
-                    android:layout_marginStart="-80dp"
+                    android:layout_marginStart="0dp"
                     android:layout_weight="1"
                     android:src="@drawable/ic_arrow_right"
                     app:srcCompat="@drawable/ic_arrow_right" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:orientation="horizontal"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp">
-
-                <Button
-                    android:id="@+id/btn_semua"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="9dp"
-                    android:layout_weight="1"
-                    android:text="Semua"
-                    android:textSize="10sp" />
-
-                <Button
-                    android:id="@+id/btn_sepakbola"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="9dp"
-                    android:layout_weight="1"
-                    android:text="Sepakbola"
-                    android:textSize="10sp" />
-
-                <Button
-                    android:id="@+id/btn_badminton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="9dp"
-                    android:layout_weight="1"
-                    android:text="Badminton"
-                    android:textSize="10sp" />
-
-                <Button
-                    android:id="@+id/btn_futsal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="9dp"
-                    android:layout_weight="1"
-                    android:text="Futsal"
-                    android:textSize="10sp" />
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
