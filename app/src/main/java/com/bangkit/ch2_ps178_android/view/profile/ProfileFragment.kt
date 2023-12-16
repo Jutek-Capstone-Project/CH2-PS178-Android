@@ -20,6 +20,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import com.bangkit.ch2_ps178_android.R
 import com.bangkit.ch2_ps178_android.databinding.FragmentProfileBinding
+import com.bangkit.ch2_ps178_android.view.profile.about.AboutUsActivity
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.storage.FirebaseStorage
@@ -82,12 +83,18 @@ class ProfileFragment : Fragment() {
             loadProfileImageURL()
         }
 
-        btnLogout.setOnClickListener {
-            (activity as? LogoutListener)?.onLogout()
-        }
-
         profileImageView.setOnClickListener {
             openGalleryForImage()
+        }
+
+        val aboutLayout = binding.layoutProfileAbout
+        aboutLayout.setOnClickListener {
+            val intent = Intent(requireContext(), AboutUsActivity::class.java)
+            startActivity(intent)
+        }
+
+        btnLogout.setOnClickListener {
+            (activity as? LogoutListener)?.onLogout()
         }
     }
 
