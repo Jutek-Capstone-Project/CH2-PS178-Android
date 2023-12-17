@@ -182,14 +182,21 @@ class ProfileFragment : Fragment() {
     }
 
     private fun loadProfileImage() {
-        if (profileImageURL != null) {
-            Glide.with(this)
-                .load(profileImageURL)
-                .circleCrop()
-                .into(profileImageView)
-        } else {
-            profileImageView.setImageResource(R.drawable.ic_profile_person)
+        if (isAdded) {
+            if (profileImageURL != null) {
+                Glide.with(this)
+                    .load(profileImageURL)
+                    .circleCrop()
+                    .into(profileImageView)
+            } else {
+                profileImageView.setImageResource(R.drawable.ic_profile_person)
+            }
         }
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        Glide.with(this).clear(profileImageView)
     }
 
     interface LogoutListener {
