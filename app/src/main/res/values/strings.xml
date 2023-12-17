@@ -47,6 +47,10 @@
         ornare ex. Sed rhoncus est ut libero porta lobortis. Fusce in dictum tellus.
     </string>
 
+    <string name="about_gorena">
+        Gorena is a reservation/booking application that will makes your sports field’s reservation easier!\n\nGorena caters to everyone, from the general public, sports enthusiasts, to sports field owners. With its accurate recommendation system, Gorena can assist you in determining which field is most suitable based on your location, interests, and desired facilities. Gorena also provides detailed information that can instill confidence in your chosen field. With Gorena, you no longer need to hassle contacting each field to inquire about availability and make reservations. With just one click, you can view the schedule of your preferred field and make reservations anytime and anywhere.
+    </string>
+
     <string name="user_name">Nama User</string>
     <string name="email_user">Email User</string>
     <string name="profile_user">profile_user</string>
@@ -59,10 +63,10 @@
     <string name="back_button">Tombol Kembali</string>
     <string name="field_name">Nama Lapangan</string>
     <string name="field_rating">5.0</string>
-    <string name="area_name">Nama Dearah</string>
+    <string name="area_name">Nama Daerah</string>
     <string name="price">Rp 125.000</string>
     <string name="per_hour">/jam</string>
-    <string name="booking">Booking</string>
+    <string name="booking">BOOKING</string>
     <string name="wifi">Wifi</string>
     <string name="toilet">Toilet</string>
     <string name="motor_parking">Motor Parking</string>
@@ -79,5 +83,13 @@
     <string name="lainnya">Lainnya</string>
     <string name="home_text">Rekomendasi untuk kamu</string>
     <string name="save">Simpan</string>
+    <string name="start_by">Mulai dari</string>
+    <string name="star_rating">Star Rating</string>
+    <string name="jarak">Jarak</string>
+    <string name="hari_dan_tanggal">Senin, 22 Desember 2023</string>
+    <string name="format_jam">16:00 - 18:00</string>
+    <string name="facility">Fasilitas:</string>
+    <string name="status">Status</string>
+    <string name="background_searchbar">Background Searchbar</string>
 
 </resources>

@@ -30,7 +30,7 @@ class AboutUsActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowTitleEnabled(false)
-        supportActionBar?.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.orange700))) // Set the orange color
+        supportActionBar?.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.orange700)))
         toolbar.setNavigationOnClickListener {
             onBackPressed()
         }

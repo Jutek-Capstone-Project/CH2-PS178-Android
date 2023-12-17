@@ -71,12 +71,12 @@ class HomeFragment : Fragment() {
         //Memasukkan data dari view model API
         val main_viewModel = ViewModelProvider(this).get(MainModel::class.java)
         main_viewModel.set_data() //Mengisi data untuk live data
-        main_viewModel.Data_mainPaging.observe(viewLifecycleOwner, {
+        main_viewModel.Data_mainPaging.observe(viewLifecycleOwner) {
             lifecycleScope.launch {
                 adapter.submitData(it)
             }
 
-        })
+        }
 
     }
 
