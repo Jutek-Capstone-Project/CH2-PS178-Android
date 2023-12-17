@@ -50,7 +50,7 @@
             app:layout_constraintTop_toBottomOf="@+id/iv_lapangan" />
 
         <LinearLayout
-            android:id="@+id/layout_2"
+            android:id="@+id/layout_informasi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -66,7 +66,8 @@
                 android:layout_height="15dp"
                 android:layout_gravity="center"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/ic_star" />
+                app:srcCompat="@drawable/ic_star"
+                android:contentDescription="@string/star_rating" />
 
             <TextView
                 android:id="@+id/tv_rating"
@@ -84,7 +85,8 @@
                 android:layout_height="5dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="10dp"
-                app:srcCompat="@drawable/ic_dot" />
+                app:srcCompat="@drawable/ic_dot"
+                android:contentDescription="@string/divider" />
 
             <TextView
                 android:id="@+id/daerah"
@@ -100,7 +102,8 @@
                 android:layout_height="5dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="10dp"
-                app:srcCompat="@drawable/ic_dot" />
+                app:srcCompat="@drawable/ic_dot"
+                android:contentDescription="@string/divider" />
 
             <TextView
                 android:id="@+id/jarak"
@@ -112,58 +115,60 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/layout_3"
+            android:id="@+id/layout_booking"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:orientation="horizontal"
+            android:layout_marginTop="10dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            app:layout_constraintTop_toBottomOf="@id/layout_2">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_informasi">
 
             <LinearLayout
                 android:layout_width="210dp"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_gravity="start">
+                android:layout_gravity="start"
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/harga"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/price"
+                    android:layout_gravity="center"
                     android:fontFamily="sans-serif-condensed"
+                    android:text="@string/price"
                     android:textColor="@color/orange700"
                     android:textSize="24sp"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/per_jam"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/per_hour"
+                    android:layout_gravity="center"
                     android:fontFamily="sans-serif-condensed"
-                    android:textSize="24sp"
-                    android:layout_gravity="center" />
+                    android:text="@string/per_hour"
+                    android:textSize="24sp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_gravity="center">
+                android:layout_gravity="center"
+                android:orientation="vertical">
 
                 <Button
                     android:id="@+id/btn_booking"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/booking"
+                    android:layout_gravity="end"
                     android:fontFamily="sans-serif-condensed"
-                    android:textStyle="bold"
+                    android:text="@string/booking"
                     android:textSize="15sp"
-                    android:layout_gravity="end"/>
+                    android:textStyle="bold" />
             </LinearLayout>
 
         </LinearLayout>
@@ -172,31 +177,36 @@
             android:id="@+id/deskripsi_lapangan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/lorem_ipsum"
             android:fontFamily="sans-serif-condensed"
+            android:text="@string/lorem_ipsum"
             android:textSize="16sp"
+            android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintTop_toBottomOf="@id/layout_3"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_booking" />
 
         <LinearLayout
+            android:id="@+id/layout_fasilitas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/deskripsi_lapangan">
 
             <TextView
                 android:id="@+id/fasilitas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/facility"
                 android:fontFamily="sans-serif-condensed"
+                android:text="@string/facility"
                 android:textSize="18sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <GridLayout
                 android:id="@+id/grid_lapangan"
@@ -204,8 +214,8 @@
                 android:layout_height="wrap_content"
                 android:columnCount="5"
                 android:orientation="horizontal"
-                android:rowCount="2"
-                android:paddingTop="10dp">
+                android:paddingTop="10dp"
+                android:rowCount="2">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/col_toilet"
@@ -292,6 +302,34 @@
                 </androidx.cardview.widget.CardView>
 
             </GridLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_rekomendasi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintTop_toBottomOf="@id/layout_fasilitas"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/rekomendasi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:text="@string/other_recommendation"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/list_rekomendasi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
         </LinearLayout>
 
