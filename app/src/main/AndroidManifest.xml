@@ -17,6 +17,11 @@
         android:theme="@style/Theme.CH2PS178Android"
         tools:targetApi="31">
         <activity
+            android:name=".view.main.MainActivity"
+            android:exported="false"
+            android:label="@string/title_activity_booking"
+            android:theme="@style/Theme.CH2PS178Android" />
+        <activity
             android:name=".view.detail.DetailActivity"
             android:exported="false" />
         <activity
@@ -27,9 +32,9 @@
             android:exported="false" />
         <activity
             android:name=".view.login.LoginActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
-            android:name=".view.main.MainActivity"
+            android:name=".view.booking.Booking"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

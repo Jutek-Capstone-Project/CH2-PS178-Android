@@ -7,4 +7,10 @@
         <item name="cornerSize">16dp</item>
     </style>
 
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/modal_anim</item>
+    </style>
+
+
+
 </resources>
