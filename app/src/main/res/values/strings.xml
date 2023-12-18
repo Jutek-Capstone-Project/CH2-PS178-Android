@@ -93,5 +93,24 @@
     <string name="background_searchbar">Background Searchbar</string>
     <string name="other_recommendation">Pilihan lain buat kamu</string>
     <string name="divider">Divider</string>
+    <string name="payment_method">Metode Pembayaran</string>
+    <string name="instant_payment">Pembayaran Instan</string>
+    <string name="qris">QRIS</string>
+    <string name="dana">DANA</string>
+    <string name="ovo">OVO</string>
+    <string name="gopay">GoPay</string>
+    <string name="payment">Pembayaran</string>
+    <string name="tanggal_booking">25 Desember 2023</string>
+    <string name="check_in">Check-in</string>
+    <string name="jam_check_in">19:00</string>
+    <string name="check_out">Check-out</string>
+    <string name="jam_check_out">21:00</string>
+    <string name="payment_detail">Rincian Pembayaran</string>
+    <string name="biaya_lapangan">Rp 35.000</string>
+    <string name="field_booking">Booking Lapangan</string>
+    <string name="service_fee">Biaya Layanan</string>
+    <string name="biaya_layanan">RP 4.000</string>
+    <string name="total_payment">Total Pembayaran</string>
+    <string name="bayar">Bayar</string>
 
 </resources>
