@@ -119,5 +119,6 @@
     <string name="transaction_number">001X2531</string>
     <string name="tanggal_transaksi">24 Desember 2023</string>
     <string name="tanggal_transaksi_teks">Tanggal Transaksi</string>
+    <string name="app_setting">Pengaturan Aplikasi</string>
 
 </resources>
