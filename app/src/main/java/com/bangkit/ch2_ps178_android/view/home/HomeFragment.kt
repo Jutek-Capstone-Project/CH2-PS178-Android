@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
@@ -27,28 +28,24 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class HomeFragment : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-    
-
+    private lateinit var progressBar: ProgressBar
+    private var hasContentLoaded = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_home, container, false)
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        progressBar = requireView().findViewById(R.id.progressBar)
 
-
-        loadContentNonPaging()
-
-//        loadContentList()
+        if (!hasContentLoaded) {
+            loadContentNonPaging()
+//            loadContentList()
+        }
     }
 
 
@@ -71,12 +68,12 @@ class HomeFragment : Fragment() {
         //Memasukkan data dari view model API
         val main_viewModel = ViewModelProvider(this).get(MainModel::class.java)
         main_viewModel.set_data() //Mengisi data untuk live data
-        main_viewModel.Data_mainPaging.observe(viewLifecycleOwner, {
+        main_viewModel.Data_mainPaging.observe(viewLifecycleOwner) {
             lifecycleScope.launch {
                 adapter.submitData(it)
             }
 
-        })
+        }
 
     }
 
@@ -92,36 +89,39 @@ class HomeFragment : Fragment() {
                 call: Call<List<MainAdapterRow>>,
                 response: Response<List<MainAdapterRow>>
             ) {
+                progressBar.visibility = View.GONE
                 if (response.isSuccessful) {
                     val data: List<MainAdapterRow>? = response.body()
 
-                    // Inisialisasi adapter
-                    val adapterStatis = AdapterStatis { data_row, cardView ->
-                        // Tangani klik item di sini
-                        // mainAdapterRowStatis adalah objek data dari item yang diklik
-                        // cardView adalah elemen CardView yang diklik
-                        direct_event_obj( data_row )
+                    if (isAdded) {
+                        // Inisialisasi adapter
+                        val adapterStatis = AdapterStatis { data_row, cardView ->
+                            // Tangani klik item di sini
+                            // mainAdapterRowStatis adalah objek data dari item yang diklik
+                            // cardView adalah elemen CardView yang diklik
+                            direct_event_obj(data_row)
+                        }
 
-                    }
+                        // Inisialisasi RecyclerView
+                        val recyclerView: RecyclerView = requireView().findViewById(R.id.data_list)
 
-                    // Inisialisasi RecyclerView
-                    val recyclerView: RecyclerView = requireView().findViewById(R.id.data_list)
+                        // Atur layout manager dan adapter untuk RecyclerView
+                        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+                        recyclerView.adapter = adapterStatis
 
-                    // Atur layout manager dan adapter untuk RecyclerView
-                    recyclerView.layoutManager = LinearLayoutManager(requireContext())
-                    recyclerView.adapter = adapterStatis
-
-                    // Kemudian, set data ke dalam adapter
-                    val dataList = // ambil data dari mana pun
+                        // Kemudian, set data ke dalam adapter
                         data?.let { adapterStatis.submitList(it) }
-                    BaseModel.swal( requireContext(),"Data ada")
-                    // Lakukan sesuatu dengan data
+                        BaseModel.swal(requireContext(), "Data ada")
+                        // Lakukan sesuatu dengan data
+                        hasContentLoaded = true
+                    }
                 } else {
                     // Handle kesalahan
                 }
             }
 
             override fun onFailure(call: Call<List<MainAdapterRow>>, t: Throwable) {
+                progressBar.visibility = View.GONE
                 // Handle kesalahan ketika gagal melakukan panggilan API
             }
         })
@@ -141,5 +141,10 @@ class HomeFragment : Fragment() {
         val intent = Intent(requireActivity(), DetailActivity::class.java)
         intent.putExtra("data_detail", data_row_obj)
         startActivity(intent)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        hasContentLoaded = false
     }
 }

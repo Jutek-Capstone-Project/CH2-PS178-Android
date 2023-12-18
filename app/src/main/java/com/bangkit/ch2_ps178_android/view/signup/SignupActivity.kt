@@ -51,8 +51,8 @@ class SignupActivity : AppCompatActivity() {
         moveToLogin = binding.tvSignupToLogin
 
         progressDialog = ProgressDialog(this)
-        progressDialog.setTitle("Dapat ilmu, pikiran jernih")
-        progressDialog.setMessage("Lagi daftarin kamu, nih!")
+        progressDialog.setTitle("Sedang daftarin kamu, iya kamu.")
+        progressDialog.setMessage("Tunggu sebentar, ya!")
 
         btnSignup.setOnClickListener {
             if (editName.text.isNotEmpty() && editEmail.text.isNotEmpty() && editPassword.text.isNotEmpty()) {

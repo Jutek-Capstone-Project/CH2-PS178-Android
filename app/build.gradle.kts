@@ -54,9 +54,9 @@ dependencies {
 
 
 
-    implementation("androidx.activity:activity-ktx:1.8.1")
-    implementation("androidx.navigation:navigation-fragment-ktx:2.7.5")
-    implementation("androidx.navigation:navigation-ui-ktx:2.7.5")
+    implementation("androidx.activity:activity-ktx:1.8.2")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.6")
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.6")
 
     implementation("androidx.activity:activity-ktx:1.8.2")
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.6")
@@ -86,7 +86,7 @@ dependencies {
     implementation ("com.github.f0ris.sweetalert:library:1.6.2")
 
     //Paging 3
-    implementation("androidx.paging:paging-runtime-ktx:3.1.0")
+    implementation("androidx.paging:paging-runtime-ktx:3.2.1")
 
 
     //Retrofit

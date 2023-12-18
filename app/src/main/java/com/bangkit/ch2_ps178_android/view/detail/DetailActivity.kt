@@ -36,7 +36,7 @@ class DetailActivity : AppCompatActivity() {
                 set_txtContent(findViewById(R.id.tv_rating), data.rating)
                 set_txtContent(findViewById(R.id.daerah), data.kecamatan)
                 set_txtContent(findViewById(R.id.harga),  "Rp " + data.price)
-                set_txtContent(findViewById(R.id.tv_rating), data.price)
+//                set_txtContent(findViewById(R.id.tv_rating), data.price)
 
                 //Untuk data icon
                 set_icon( findViewById(R.id.col_wifi), data.fasilitasWifi )

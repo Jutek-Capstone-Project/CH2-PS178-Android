@@ -9,19 +9,19 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tb_login_back"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="50dp"
         app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/ic_back_black" />
 
     <TextView
         android:id="@+id/tv_login_title"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:text="@string/login"
+        android:fontFamily="sans-serif-condensed"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,6 +45,7 @@
             android:id="@+id/edit_login_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
             android:maxLength="255"
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -68,26 +69,29 @@
             android:id="@+id/edit_login_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
             android:maxLength="255"
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btn_login"
-        android:layout_width="0dp"
-        android:layout_height="64dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:backgroundTint="@color/orange700"
         android:text="@string/login"
-        android:textSize="16sp"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tl_login_password" />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:gravity="center"
@@ -101,6 +105,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/move_to_signup"
+            android:fontFamily="sans-serif-condensed"
             android:textSize="16sp" />
 
         <TextView
@@ -110,7 +115,9 @@
             android:layout_marginStart="8dp"
             android:textColor="@color/orange700"
             android:text="@string/signup"
-            android:textSize="16sp" />
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
     </LinearLayout>
 
 

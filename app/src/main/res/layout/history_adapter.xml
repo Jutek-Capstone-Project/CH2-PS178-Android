@@ -28,6 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:layout_gravity="center"
             android:padding="10dp">
 
             <TextView
@@ -36,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/field_name"
                 android:fontFamily="sans-serif-condensed"
-                android:textSize="20sp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -80,56 +81,51 @@
                     android:textSize="15sp"
                     android:layout_marginStart="10dp"/>
 
-                <ImageView
-                    android:id="@+id/pembatas2"
-                    android:layout_width="5dp"
-                    android:layout_height="5dp"
-                    app:srcCompat="@drawable/ic_dot"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="10dp"/>
-
-                <TextView
-                    android:id="@+id/jarak"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/jarak"
-                    android:fontFamily="sans-serif-condensed"
-                    android:textSize="15sp"
-                    android:layout_marginStart="10dp"/>
-
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/start_by"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/start_by"
-                android:fontFamily="sans-serif-condensed"
-                android:textSize="15sp"
-                android:layout_marginTop="10dp"/>
-
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
 
-                <TextView
-                    android:id="@+id/harga"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/price"
-                    android:fontFamily="sans-serif-condensed"
-                    android:textColor="@color/orange700"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/day_and_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/hari_dan_tanggal"
+                        android:fontFamily="sans-serif-condensed"
+                        android:textSize="15sp"/>
 
-                <TextView
-                    android:id="@+id/per_jam"
-                    android:layout_width="wrap_content"
+                    <TextView
+                        android:id="@+id/hour"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/format_jam"
+                        android:fontFamily="sans-serif-condensed"
+                        android:textSize="15sp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/per_hour"
-                    android:fontFamily="sans-serif-condensed"
-                    android:textSize="20sp" />
+                    android:orientation="vertical"
+                    android:layout_gravity="bottom">
+                    <TextView
+                        android:id="@+id/status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/status"
+                        android:fontFamily="sans-serif-condensed"
+                        android:textColor="@color/main_green_color"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:layout_gravity="end"/>
+                </LinearLayout>
 
             </LinearLayout>
 
