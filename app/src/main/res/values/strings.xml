@@ -112,5 +112,12 @@
     <string name="biaya_layanan">RP 4.000</string>
     <string name="total_payment">Total Pembayaran</string>
     <string name="bayar">Bayar</string>
+    <string name="transaction_successful">Transaksi Berhasil</string>
+    <string name="payment_successful">Pembayaran Anda berhasil diproses</string>
+    <string name="biaya_total">Rp 39.000</string>
+    <string name="transaction_number_text">Nomor Transaksi</string>
+    <string name="transaction_number">001X2531</string>
+    <string name="tanggal_transaksi">24 Desember 2023</string>
+    <string name="tanggal_transaksi_teks">Tanggal Transaksi</string>
 
 </resources>
