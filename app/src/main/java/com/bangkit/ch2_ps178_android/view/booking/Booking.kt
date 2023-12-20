@@ -20,66 +20,32 @@ class Booking : AppCompatActivity() {
         setContentView(R.layout.activity_booking)
 
 
-
-
-
-
         //Modal info pem
         var modalInfoPem = ModalInfoPem(this)
-        var col_info_pem : LinearLayout = findViewById(R.id.col_info_pem)
-        col_info_pem.setOnClickListener{
+        var col_info_pem: LinearLayout = findViewById(R.id.col_info_pem)
+        col_info_pem.setOnClickListener {
             modalInfoPem.show()
         }
 
         //Modal catatan
         var modalCatatan = ModalCatatan(this)
-        var layout_catatan : LinearLayout = findViewById(R.id.layout_catatan)
-        layout_catatan.setOnClickListener{
+        var layout_catatan: LinearLayout = findViewById(R.id.layout_catatan)
+        layout_catatan.setOnClickListener {
             modalCatatan.show()
         }
 
         //Modal pesan syarat
         var modalSyarat = ModalSyarat(this)
-        var btn_pesan : Button = findViewById(R.id.btn_pesan)
-        btn_pesan.setOnClickListener{
+        var btn_pesan: Button = findViewById(R.id.btn_pesan)
+        btn_pesan.setOnClickListener {
             modalSyarat.show()
         }
 
 
+
+
     }
 
-
-
-
-
-
-
-
-
-
-//    private fun modal_catatan() {
-//        val dialog = Dialog(this)
-//
-//        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-//        dialog.setContentView(R.layout.modal_catatan_layout)
-//
-//        setting_modal(dialog)
-//
-//        // Tampilkan dialog
-//        dialog.show()
-//    }
-//
-//    private fun modal_syarat() {
-//        val dialog = Dialog(this)
-//
-//        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-//        dialog.setContentView(R.layout.modal_syarat_layout )
-//
-//        setting_modal(dialog)
-//
-//        // Tampilkan dialog
-//        dialog.show()
-//    }
 
 }
 

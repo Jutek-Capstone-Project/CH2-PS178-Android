@@ -97,6 +97,7 @@ class DetailActivity : AppCompatActivity() {
         val intent = Intent(this, Booking::class.java)
         intent.putExtra("passing", data_row_obj)
         startActivity(intent)
+        overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
     }
 
 }

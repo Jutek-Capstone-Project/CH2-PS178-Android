@@ -129,7 +129,11 @@ class HomeFragment : Fragment() {
         val intent = Intent(requireActivity(), DetailActivity::class.java)
         intent.putExtra("data_paramObj", data_row_obj)
         startActivity(intent)
+        requireActivity().overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
+
     }
+
+
 
     override fun onDestroyView() {
         super.onDestroyView()
