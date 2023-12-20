@@ -123,6 +123,16 @@
     <string name="tanggal_transaksi">24 Desember 2023</string>
     <string name="tanggal_transaksi_teks">Tanggal Transaksi</string>
     <string name="app_setting">Pengaturan Aplikasi</string>
+    <string name="booking_notes">Catatan Pemesanan</string>
+    <string name="fine_line">Fine Line</string>
+    <string name="add_here">Tambahkan disini, ya!</string>
+    <string name="user_booking_info">Informasi Pemesan</string>
+    <string name="full_name">Nama Lengkap</string>
+    <string name="email_address">Alamat Email</string>
+    <string name="phone_number">Nomor Ponsel</string>
+    <string name="syarat_ketentuan"><![CDATA[Syarat & Ketentuan]]></string>
+    <string name="sk">Dengan mendaftarkan akun ini, saya menyetujui syarat dan ketentuan yang berlaku di aplikasi Gorena</string>
+    <string name="pesan">Pesan</string>
 
 
 </resources>
