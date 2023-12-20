@@ -16,12 +16,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CH2PS178Android"
         tools:targetApi="31">
-        <activity
 
-            android:name=".view.booking.Booking"
+        <activity
+            android:name=".view.main.MainActivity"
             android:exported="false"
             android:label="@string/title_activity_booking"
             android:theme="@style/Theme.CH2PS178Android" />
+
+        <activity
+            android:name=".view.success.SuccessActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".view.payment.PaymentActivity"
+            android:exported="false" />
 
         <activity
             android:name=".view.profile.about.AboutUsActivity"
@@ -40,7 +48,7 @@
             android:name=".view.login.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".view.main.MainActivity"
+            android:name=".view.booking.Booking"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

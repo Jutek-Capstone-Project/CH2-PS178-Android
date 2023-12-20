@@ -25,7 +25,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="350dp"
                 android:background="#FBEDDC"
-                android:text="modal_infopem_layout.xml"
+                android:text="Catatan Pemesanan"
                 android:textSize="50dp" />
             
         </LinearLayout>

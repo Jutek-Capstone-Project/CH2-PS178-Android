@@ -9,6 +9,7 @@ import android.widget.ProgressBar
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.paging.LoadState
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bangkit.ch2_ps178_android.R
@@ -42,9 +43,10 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         progressBar = requireView().findViewById(R.id.progressBar)
 
+        loadContentList()
+
         if (!hasContentLoaded) {
-            loadContentNonPaging()
-//            loadContentList()
+//            loadContentNonPaging()
         }
     }
 
@@ -55,8 +57,7 @@ class HomeFragment : Fragment() {
 
         // Panggil loadContentList di sini untuk memuat data dan mengatur RecyclerView
         // Recycleview data storys
-        val recyclerView: RecyclerView = requireView().findViewById(R.id.data_list)
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
         val adapter = MainAdapter() { data_row, el_row ->
             // Event ketika item di RecyclerView di klik
             // Data click adalah data row pada list dari setiap index
@@ -65,15 +66,39 @@ class HomeFragment : Fragment() {
             direct_event( "contoh parameter id data")
         }
 
+        val recyclerView: RecyclerView = requireView().findViewById(R.id.data_list)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.adapter = adapter
+
+
+
+
         //Memasukkan data dari view model API
         val main_viewModel = ViewModelProvider(this).get(MainModel::class.java)
-        main_viewModel.set_data() //Mengisi data untuk live data
-        main_viewModel.Data_mainPaging.observe(viewLifecycleOwner) {
-            lifecycleScope.launch {
-                adapter.submitData(it)
-            }
+        main_viewModel.set_data()
 
+        adapter.addLoadStateListener { loadState ->
+            val totalItems = adapter.itemCount
+
+            // Menangani hanya saat data berhasil dimuat (loadState.refresh == LoadState.NotLoading)
+            if (loadState.refresh is LoadState.NotLoading) {
+                // Lakukan sesuatu dengan totalItems
+                BaseModel.swal(requireContext(), "Total Items", "Total Items: $totalItems")
+            }else{
+                BaseModel.swal(requireContext(), "Data gagal di load")
+                BaseModel.swal(requireContext(), totalItems.toString())
+
+            }
         }
+
+        // Observer untuk LiveData PagingData
+        main_viewModel.Data_mainPaging.observe(viewLifecycleOwner) { pagingData ->
+            lifecycleScope.launch {
+                adapter.submitData(pagingData)
+            }
+        }
+
+
 
     }
 

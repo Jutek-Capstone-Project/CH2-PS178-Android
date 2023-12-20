@@ -43,7 +43,7 @@ class DetailActivity : AppCompatActivity() {
                 set_icon( findViewById(R.id.col_toilet), data.fasilitasWC )
                 set_icon( findViewById(R.id.col_parkir_motor), data.fasilitasParkirMotor )
                 set_icon( findViewById(R.id.col_parkir_mobil), data.fasilitasParkirMobil )
-                set_icon( findViewById(R.id.col_mushola), data.fasilitasMushola )
+                set_icon( findViewById(R.id.col_check_in), data.fasilitasMushola )
 
             }
         }
