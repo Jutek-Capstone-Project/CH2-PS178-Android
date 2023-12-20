@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bangkit.ch2_ps178_android.R
 import com.bangkit.ch2_ps178_android.data.dataclass.MainAdapterRow
+import com.bangkit.ch2_ps178_android.data.model.BaseModel
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.google.android.material.imageview.ShapeableImageView
@@ -35,18 +36,24 @@ class MainAdapter(private val onItem_click: (MainAdapterRow, CardView) -> Unit) 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(item: MainAdapterRow) {
+
+
+            //Ambil datanya
+            val img_data = BaseModel.getImg( item )
+            val judul_data = item.name
+            val jarak_data: String = item.lat
+            val harga_data: String = item.price
+            val rating_data: String = item.rating
+            val lokasi_data: String = item.kabupaten
+
+
             //Menetapkan aturan UI, dan di terapkan pada object Holder di method onBindViewHolder
             val img: ShapeableImageView = itemView.findViewById(R.id.gambar)
             val judul: TextView = itemView.findViewById(R.id.judul)
             val jarak: TextView = itemView.findViewById(R.id.jarak)
             val harga: TextView = itemView.findViewById(R.id.harga)
-
-            val img_data = "https://api.ayo.co.id/image/venue/165589181882791.image_cropper_97735C2B-26B5-421C-9E4A-7128A7112E3A-37880-000006F883353C2A_large.jpg"
-            val judul_data = item.name
-            val jarak_data: String = item.rating
-            val harga_data: String = item.price
-
-            val card_story = itemView.findViewById<CardView>(R.id.card_story)
+            val rating: TextView = itemView.findViewById(R.id.rating)
+            val lokasi: TextView = itemView.findViewById(R.id.lokasi)
 
             Glide.with(itemView)
                 .load(img_data)
@@ -54,9 +61,13 @@ class MainAdapter(private val onItem_click: (MainAdapterRow, CardView) -> Unit) 
                 .into(img)
             judul.text = judul_data
             jarak.text = jarak_data
-            harga.text = harga_data
+            harga.text = "Rp " + harga_data
+            lokasi.text = lokasi_data
+            rating.text = rating_data
+
 
             //event setiap item ketika di klik dengan melakukan call back
+            val card_story = itemView.findViewById<CardView>(R.id.card_story)
             itemView.setOnClickListener {
                 //item adalah datanya dari elemen yang di klik
                 //card story adalah elemen item card yang diklik dari data

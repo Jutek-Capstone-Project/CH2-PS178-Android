@@ -98,4 +98,7 @@ dependencies {
 
     //Lottie Animation
     implementation("com.airbnb.android:lottie:6.2.0")
+
+    //Shimmer Animation
+    implementation ("com.facebook.shimmer:shimmer:0.5.0")
 }

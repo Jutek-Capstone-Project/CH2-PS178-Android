@@ -24,25 +24,29 @@ class MainPagingSource(private val apiService: MainApi) : PagingSource<Int, Main
         return try {
             val position = params.key ?: INITIAL_PAGE_INDEX
 
-
-            val response = apiService.postData(
+            val response = apiService.getDataPaging(
                 page = position,
-                pageSize = params.loadSize,
+                pageSize = 15,
                 lat = -6.175392,
                 long = 106.827153,
                 input_field = "sepak bola"
             )
-            val data = response.body() ?: emptyList()
 
-            LoadResult.Page(
-                data = data,
-                prevKey = if (position == INITIAL_PAGE_INDEX) null else position - 1,
-                nextKey = if (data.isEmpty()) null else position + 1
-            )
+            if (response.isSuccessful) {
+                val data = response.body()?.data ?: emptyList()
 
-
+                LoadResult.Page(
+                    data = data,
+                    prevKey = if (position == INITIAL_PAGE_INDEX) null else position - 1,
+                    nextKey = if (data.isEmpty()) null else position + 1
+                )
+            } else {
+                // Handle error case, for example, logging or showing an error message
+                LoadResult.Error(Exception("Failed to load data. Code: ${response.code()}"))
+            }
         } catch (exception: Exception) {
-            return LoadResult.Error(exception)
+            // Handle other exceptions
+            LoadResult.Error(exception)
         }
     }
 

@@ -39,7 +39,7 @@
                 <GridLayout
                     android:id="@+id/grid_lapangan"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="145dp"
                     android:layout_gravity="center"
                     android:columnCount="4"
                     android:orientation="horizontal"
@@ -49,8 +49,8 @@
                         android:id="@+id/card_semua"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:layout_margin="10dp"
                         android:layout_gravity="center"
+                        android:layout_margin="10dp"
                         app:cardBackgroundColor="@color/orange700"
                         app:cardCornerRadius="15dp">
 
@@ -67,8 +67,8 @@
                         android:id="@+id/card_sepakbola"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:layout_margin="10dp"
                         android:layout_gravity="center"
+                        android:layout_margin="10dp"
                         app:cardBackgroundColor="@color/orange700"
                         app:cardCornerRadius="15dp">
 
@@ -85,8 +85,8 @@
                         android:id="@+id/card_futsal"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:layout_margin="10dp"
                         android:layout_gravity="center"
+                        android:layout_margin="10dp"
                         app:cardBackgroundColor="@color/orange700"
                         app:cardCornerRadius="15dp">
 
@@ -103,8 +103,8 @@
                         android:id="@+id/card_badminton"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:layout_margin="10dp"
                         android:layout_gravity="center"
+                        android:layout_margin="10dp"
                         app:cardBackgroundColor="@color/orange700"
                         app:cardCornerRadius="15dp">
 
@@ -121,8 +121,8 @@
                         android:id="@+id/card_voli"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:layout_margin="10dp"
                         android:layout_gravity="center"
+                        android:layout_margin="10dp"
                         app:cardBackgroundColor="@color/orange700"
                         app:cardCornerRadius="15dp">
 
@@ -139,8 +139,8 @@
                         android:id="@+id/card_basket"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:layout_margin="10dp"
                         android:layout_gravity="center"
+                        android:layout_margin="10dp"
                         app:cardBackgroundColor="@color/orange700"
                         app:cardCornerRadius="15dp">
 
@@ -157,8 +157,8 @@
                         android:id="@+id/card_tenis"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:layout_margin="10dp"
                         android:layout_gravity="center"
+                        android:layout_margin="10dp"
                         app:cardBackgroundColor="@color/orange700"
                         app:cardCornerRadius="15dp">
 
@@ -175,8 +175,8 @@
                         android:id="@+id/card_lainnya"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:layout_margin="10dp"
                         android:layout_gravity="center"
+                        android:layout_margin="10dp"
                         app:cardBackgroundColor="@color/orange700"
                         app:cardCornerRadius="15dp">
 
@@ -221,6 +221,33 @@
                     app:srcCompat="@drawable/ic_arrow_right" />
             </LinearLayout>
 
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:duration="800">
+
+                <!-- Adding 8 rows of placeholders -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <include layout="@layout/main_adapter_shimmer" />
+                    <include layout="@layout/main_adapter_shimmer" />
+                    <include layout="@layout/main_adapter_shimmer" />
+                    <include layout="@layout/main_adapter_shimmer" />
+                    <include layout="@layout/main_adapter_shimmer" />
+                    <include layout="@layout/main_adapter_shimmer" />
+
+                </LinearLayout>
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/data_list"
                 android:layout_width="match_parent"
@@ -228,13 +255,6 @@
             </androidx.recyclerview.widget.RecyclerView>
 
         </LinearLayout>
-
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:visibility="visible" />
 
     </RelativeLayout>
 

@@ -1,14 +1,20 @@
 package com.bangkit.ch2_ps178_android.view.detail
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import com.bangkit.ch2_ps178_android.R
 import com.bangkit.ch2_ps178_android.data.dataclass.MainAdapterRow
+import com.bangkit.ch2_ps178_android.data.model.BaseModel
 import com.bangkit.ch2_ps178_android.databinding.ActivityDetailBinding
+import com.bangkit.ch2_ps178_android.view.booking.Booking
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class DetailActivity : AppCompatActivity() {
@@ -21,29 +27,44 @@ class DetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val receivedIntent = intent
-        if (receivedIntent != null && receivedIntent.hasExtra("data_detail")) {
-            val data = receivedIntent.getParcelableExtra<MainAdapterRow>("data_detail")
+        if (receivedIntent != null && receivedIntent.hasExtra("data_paramObj")) {
+            val data_row = receivedIntent.getParcelableExtra<MainAdapterRow>("data_paramObj")
 
             // Gunakan data yang diterima di sini
-            if (data != null) {
-                // Lakukan sesuatu dengan data yang diterima
+            if (data_row != null) {
 
+
+                // Implementasikan ke UI dari data yang diterima
                 //untuk gambar
                 var img_el : ImageView = findViewById(R.id.iv_lapangan)
+                var img_url = BaseModel.getImg( data_row )
+                Glide.with(this)
+                    .load(img_url)
+                    .diskCacheStrategy(DiskCacheStrategy.ALL) // Atur ke DiskCacheStrategy.NONE jika Anda tidak ingin menyimpan cache
+                    .into(img_el)
 
-                //untuk data text
-                set_txtContent(findViewById(R.id.tv_nama_lapangan), data.name)
-                set_txtContent(findViewById(R.id.tv_rating), data.rating)
-                set_txtContent(findViewById(R.id.daerah), data.kecamatan)
-                set_txtContent(findViewById(R.id.harga),  "Rp " + data.price)
-//                set_txtContent(findViewById(R.id.tv_rating), data.price)
+                //untuk data informasi
+                set_txtContent(findViewById(R.id.tv_nama_lapangan), data_row.name)
+                set_txtContent(findViewById(R.id.tv_rating), data_row.rating)
+                set_txtContent(findViewById(R.id.daerah), data_row.kecamatan)
+                set_txtContent(findViewById(R.id.jarak),  data_row.lat)
+                set_txtContent(findViewById(R.id.harga),  "Rp " + data_row.price)
+
 
                 //Untuk data icon
-                set_icon( findViewById(R.id.col_wifi), data.fasilitasWifi )
-                set_icon( findViewById(R.id.col_toilet), data.fasilitasWC )
-                set_icon( findViewById(R.id.col_parkir_motor), data.fasilitasParkirMotor )
-                set_icon( findViewById(R.id.col_parkir_mobil), data.fasilitasParkirMobil )
-                set_icon( findViewById(R.id.col_check_in), data.fasilitasMushola )
+                set_icon( findViewById(R.id.col_wifi), data_row.fasilitasWifi )
+                set_icon( findViewById(R.id.col_toilet), data_row.fasilitasWC )
+                set_icon( findViewById(R.id.col_parkir_motor), data_row.fasilitasParkirMotor )
+                set_icon( findViewById(R.id.col_parkir_mobil), data_row.fasilitasParkirMobil )
+                set_icon( findViewById(R.id.col_check_in), data_row.fasilitasMushola )
+
+
+                //Event pesan
+                var btn_pesan : Button = findViewById(R.id.btn_pesan)
+                btn_pesan.setOnClickListener {
+
+                    direct_event_obj( data_row )
+                }
 
             }
         }
@@ -66,8 +87,16 @@ class DetailActivity : AppCompatActivity() {
             obj_el.visibility = View.GONE
         }
 
+    }
 
 
+    fun direct_event_obj( data_row_obj : MainAdapterRow ){
+
+
+        //BaseModel.swal(requireContext(), "s")
+        val intent = Intent(this, Booking::class.java)
+        intent.putExtra("passing", data_row_obj)
+        startActivity(intent)
     }
 
 }

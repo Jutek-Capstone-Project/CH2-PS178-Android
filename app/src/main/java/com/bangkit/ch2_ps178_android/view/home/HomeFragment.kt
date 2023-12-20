@@ -20,6 +20,8 @@ import com.bangkit.ch2_ps178_android.data.dataclass.MainAdapterRow
 import com.bangkit.ch2_ps178_android.data.model.BaseModel
 import com.bangkit.ch2_ps178_android.data.model.MainModel
 import com.bangkit.ch2_ps178_android.view.detail.DetailActivity
+import com.facebook.shimmer.Shimmer
+import com.facebook.shimmer.ShimmerFrameLayout
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
@@ -41,15 +43,22 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        progressBar = requireView().findViewById(R.id.progressBar)
+
 
         loadContentList()
 
-        if (!hasContentLoaded) {
-//            loadContentNonPaging()
-        }
     }
 
+    fun start_shimmer(){
+        val shimmerLoad : ShimmerFrameLayout = requireView().findViewById(R.id.shimmer_view)
+        shimmerLoad.visibility = View.VISIBLE
+        shimmerLoad.startShimmer()
+    }
+    fun stop_shimmer(){
+        val shimmerLoad : ShimmerFrameLayout = requireView().findViewById(R.id.shimmer_view)
+        shimmerLoad.visibility = View.GONE
+        shimmerLoad.stopShimmer()
+    }
 
     private fun loadContentList() {
 //        Ini data content yang pake paging, cuman yaa gituh
@@ -62,34 +71,23 @@ class HomeFragment : Fragment() {
             // Event ketika item di RecyclerView di klik
             // Data click adalah data row pada list dari setiap index
             // el_story elemen card sesuai dengan index berbanding lurus dengan data click
-            BaseModel.toast(requireContext(), data_row.name)
-            direct_event( "contoh parameter id data")
+            //BaseModel.toast(requireContext(), data_row.name)
+            direct_event_obj( data_row )
         }
+
+
+        //Memulai efek load shimmer
+        start_shimmer()
 
         val recyclerView: RecyclerView = requireView().findViewById(R.id.data_list)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = adapter
 
 
-
-
         //Memasukkan data dari view model API
         val main_viewModel = ViewModelProvider(this).get(MainModel::class.java)
         main_viewModel.set_data()
 
-        adapter.addLoadStateListener { loadState ->
-            val totalItems = adapter.itemCount
-
-            // Menangani hanya saat data berhasil dimuat (loadState.refresh == LoadState.NotLoading)
-            if (loadState.refresh is LoadState.NotLoading) {
-                // Lakukan sesuatu dengan totalItems
-                BaseModel.swal(requireContext(), "Total Items", "Total Items: $totalItems")
-            }else{
-                BaseModel.swal(requireContext(), "Data gagal di load")
-                BaseModel.swal(requireContext(), totalItems.toString())
-
-            }
-        }
 
         // Observer untuk LiveData PagingData
         main_viewModel.Data_mainPaging.observe(viewLifecycleOwner) { pagingData ->
@@ -98,62 +96,27 @@ class HomeFragment : Fragment() {
             }
         }
 
+        // Observe LoadState to show/hide ProgressBar
+        adapter.addLoadStateListener { loadState ->
+            val isRefreshing = loadState.refresh is LoadState.Loading
+            val isListEmpty = adapter.itemCount == 0
+
+            // Show ProgressBar only if it's refreshing and the list is empty
+            if (isRefreshing && isListEmpty){
+                start_shimmer()
+            }else{
+                stop_shimmer()
+            }
+        }
+
+
 
 
     }
 
-    fun loadContentNonPaging(){
-        val retrofit = Retrofit.Builder()
-            .baseUrl( BaseModel.BASE_URL ) // Ganti dengan base URL API Anda
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-        val apiService = retrofit.create(MainApi::class.java)
-        val call = apiService.get_data()
-        call.enqueue(object : Callback<List<MainAdapterRow>> {
-            override fun onResponse(
-                call: Call<List<MainAdapterRow>>,
-                response: Response<List<MainAdapterRow>>
-            ) {
-                progressBar.visibility = View.GONE
-                if (response.isSuccessful) {
-                    val data: List<MainAdapterRow>? = response.body()
-
-                    if (isAdded) {
-                        // Inisialisasi adapter
-                        val adapterStatis = AdapterStatis { data_row, cardView ->
-                            // Tangani klik item di sini
-                            // mainAdapterRowStatis adalah objek data dari item yang diklik
-                            // cardView adalah elemen CardView yang diklik
-                            direct_event_obj(data_row)
-                        }
-
-                        // Inisialisasi RecyclerView
-                        val recyclerView: RecyclerView = requireView().findViewById(R.id.data_list)
-
-                        // Atur layout manager dan adapter untuk RecyclerView
-                        recyclerView.layoutManager = LinearLayoutManager(requireContext())
-                        recyclerView.adapter = adapterStatis
-
-                        // Kemudian, set data ke dalam adapter
-                        data?.let { adapterStatis.submitList(it) }
-                        BaseModel.swal(requireContext(), "Data ada")
-                        // Lakukan sesuatu dengan data
-                        hasContentLoaded = true
-                    }
-                } else {
-                    // Handle kesalahan
-                }
-            }
-
-            override fun onFailure(call: Call<List<MainAdapterRow>>, t: Throwable) {
-                progressBar.visibility = View.GONE
-                // Handle kesalahan ketika gagal melakukan panggilan API
-            }
-        })
-    }
 
     fun direct_event( param : String ){
-//        Ini ngirim data dengan anggapan data ke detail diambil dari link by id
+        //Ini ngirim data dengan anggapan data ke detail diambil dari link by id
         val intent = Intent(requireActivity(), DetailActivity::class.java)
         intent.putExtra("param", param)
         startActivity(intent)
@@ -162,9 +125,9 @@ class HomeFragment : Fragment() {
     fun direct_event_obj( data_row_obj : MainAdapterRow ){
 
 
-//        BaseModel.swal(requireContext(), "s")
+        //BaseModel.swal(requireContext(), "s")
         val intent = Intent(requireActivity(), DetailActivity::class.java)
-        intent.putExtra("data_detail", data_row_obj)
+        intent.putExtra("data_paramObj", data_row_obj)
         startActivity(intent)
     }
 

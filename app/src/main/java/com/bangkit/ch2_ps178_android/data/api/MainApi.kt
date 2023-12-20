@@ -1,6 +1,7 @@
 package com.bangkit.ch2_ps178_android.data.api
 
 
+import com.bangkit.ch2_ps178_android.data.dataclass.MainAPIResponse
 import com.bangkit.ch2_ps178_android.data.dataclass.MainAdapterReq
 import com.bangkit.ch2_ps178_android.data.dataclass.MainAdapterRow
 import retrofit2.Call
@@ -15,14 +16,14 @@ interface MainApi {
     fun get_data(): Call<List<MainAdapterRow>>
 
     @POST("api/data-paging")
-    suspend fun postData(
+    suspend fun getDataPaging(
         @Query("page") page: Int,
         @Query("pageSize") pageSize: Int,
         @Query("lat") lat: Double,
         @Query("long") long: Double,
         @Query("input_field") input_field: String,
 
-    ): Response<List<MainAdapterRow>>
+    ): Response<MainAPIResponse>
 
 }
 

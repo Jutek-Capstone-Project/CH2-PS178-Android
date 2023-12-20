@@ -48,7 +48,7 @@ class MainModel : ViewModel() {
     fun get_data() : LiveData<PagingData<MainAdapterRow>>{
         return Pager(
             config = PagingConfig(
-                pageSize = 10
+                pageSize = 2
             ),
             pagingSourceFactory = {
                 MainPagingSource(MainApi)
