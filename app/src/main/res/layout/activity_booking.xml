@@ -39,8 +39,9 @@
             android:layout_height="match_parent"
             android:paddingStart="30dp"
             android:paddingEnd="30dp"
-            android:paddingBottom="30dp"
-            android:orientation="vertical">
+            android:paddingBottom="15dp"
+            android:orientation="vertical"
+            android:background="@drawable/bottom_border">
 
             <LinearLayout
                 android:id="@+id/layout_gambar"
@@ -287,15 +288,16 @@
 
         </LinearLayout>
 
-
         <LinearLayout
             android:id="@+id/layout_utama_pemesanan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:paddingTop="15dp"
             android:paddingLeft="30dp"
             android:paddingRight="30dp"
-            android:paddingBottom="30dp">
+            android:paddingBottom="15dp"
+            android:background="@drawable/bottom_border">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -311,7 +313,6 @@
                     android:layout_height="wrap_content"
                     android:columnCount="2"
                     android:orientation="horizontal"
-                    android:paddingTop="10dp"
                     android:rowCount="1">
 
 
@@ -453,6 +454,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
+            android:paddingTop="15dp"
             android:paddingLeft="30dp"
             android:paddingRight="30dp"
             android:paddingBottom="30dp">
@@ -462,9 +464,7 @@
                 android:layout_height="match_parent"
                 android:columnCount="2"
                 android:orientation="horizontal"
-                android:paddingTop="10dp"
                 android:rowCount="1">
-
 
                 <LinearLayout
                     android:layout_width="0dp"

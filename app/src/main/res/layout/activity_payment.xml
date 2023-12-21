@@ -35,8 +35,12 @@
             android:id="@+id/konfirmasi_booking"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:paddingStart="20dp"
+            android:paddingTop="20dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="20dp"
             android:orientation="horizontal"
+            android:background="@drawable/bottom_border"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tb_payment_back">
@@ -162,9 +166,11 @@
             android:id="@+id/layout_metode_pembayaran"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
+            android:paddingStart="20dp"
+            android:paddingTop="20dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="20dp"
+            android:background="@drawable/bottom_border"
             android:orientation="vertical"
             app:layout_constraintTop_toBottomOf="@id/konfirmasi_booking">
 
@@ -188,8 +194,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:background="@drawable/bottom_border">
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:id="@+id/logo_payment_1"
@@ -223,8 +228,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:background="@drawable/bottom_border">
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:id="@+id/logo_payment_2"
@@ -258,8 +262,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:background="@drawable/bottom_border">
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:id="@+id/logo_payment_3"
@@ -293,8 +296,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:background="@drawable/bottom_border">
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:id="@+id/logo_payment_4"
@@ -328,8 +330,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:background="@drawable/bottom_border">
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:id="@+id/logo_payment_5"
@@ -343,7 +344,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Bank Central Asia (BCA)"
+                        android:text="@string/bank_central_asia_bca"
                         android:fontFamily="sans-serif-condensed"
                         android:textSize="18sp"
                         android:textColor="@color/grey"
@@ -363,8 +364,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:background="@drawable/bottom_border">
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:id="@+id/logo_payment_6"
@@ -378,7 +378,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Bank Mandiri"
+                        android:text="@string/bank_mandiri"
                         android:fontFamily="sans-serif-condensed"
                         android:textSize="18sp"
                         android:textColor="@color/grey"
@@ -398,8 +398,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:background="@drawable/bottom_border">
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:id="@+id/logo_payment_7"
@@ -413,7 +412,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Bank Negara Indonesia (BNI)"
+                        android:text="@string/bank_negara_indonesia_bni"
                         android:fontFamily="sans-serif-condensed"
                         android:textSize="18sp"
                         android:textColor="@color/grey"
@@ -433,8 +432,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:background="@drawable/bottom_border">
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:id="@+id/logo_payment_8"
@@ -448,7 +446,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Bank Rakyat Indonesia (BRI)"
+                        android:text="@string/bank_rakyat_indonesia_bri"
                         android:fontFamily="sans-serif-condensed"
                         android:textSize="18sp"
                         android:textColor="@color/grey"
@@ -468,8 +466,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:background="@drawable/bottom_border">
+                    android:orientation="horizontal">
 
                     <ImageView
                         android:id="@+id/logo_payment_9"
@@ -483,7 +480,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Bank Syariah Indonesia (BSI)"
+                        android:text="@string/bank_syariah_indonesia_bsi"
                         android:fontFamily="sans-serif-condensed"
                         android:textSize="18sp"
                         android:textColor="@color/grey"
@@ -506,9 +503,11 @@
             android:id="@+id/layout_rincian_pembayaran"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
+            android:paddingStart="20dp"
+            android:paddingTop="20dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="20dp"
+            android:background="@drawable/bottom_border"
             android:orientation="vertical"
             app:layout_constraintTop_toBottomOf="@id/layout_metode_pembayaran">
 
@@ -640,10 +639,10 @@
             android:id="@+id/button_bayar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="20dp"
             android:text="@string/bayar"
             android:textSize="18sp"
             android:textStyle="bold"

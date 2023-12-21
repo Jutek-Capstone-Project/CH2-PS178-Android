@@ -135,6 +135,11 @@
     <string name="pesan">Pesan</string>
     <string name="field_detail">Detail Lapangan</string>
     <string name="booking_information">Informasi Pemesanan</string>
+    <string name="bank_mandiri">Bank Mandiri</string>
+    <string name="bank_central_asia_bca">Bank Central Asia (BCA)</string>
+    <string name="bank_negara_indonesia_bni">Bank Negara Indonesia (BNI)</string>
+    <string name="bank_rakyat_indonesia_bri">Bank Rakyat Indonesia (BRI)</string>
+    <string name="bank_syariah_indonesia_bsi">Bank Syariah Indonesia (BSI)</string>
 
 
 </resources>
