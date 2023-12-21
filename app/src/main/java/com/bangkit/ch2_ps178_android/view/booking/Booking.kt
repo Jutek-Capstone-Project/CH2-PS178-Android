@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.view.Window
 import android.widget.Button
 import android.widget.LinearLayout
+import androidx.appcompat.widget.Toolbar
 import androidx.cardview.widget.CardView
 import com.bangkit.ch2_ps178_android.R
 import com.bangkit.ch2_ps178_android.data.model.BaseModel
@@ -41,11 +42,20 @@ class Booking : AppCompatActivity() {
             modalSyarat.show()
         }
 
-
-
+        setupActionBar()
 
     }
 
+    private fun setupActionBar() {
+        val toolbar: Toolbar = findViewById(R.id.tb_booking_back)
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+        supportActionBar?.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.orange700)))
+        toolbar.setNavigationOnClickListener {
+            onBackPressed()
+        }
+    }
 
 }
 

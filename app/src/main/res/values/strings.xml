@@ -133,6 +133,8 @@
     <string name="syarat_ketentuan"><![CDATA[Syarat & Ketentuan]]></string>
     <string name="sk">Dengan mendaftarkan akun ini, saya menyetujui syarat dan ketentuan yang berlaku di aplikasi Gorena</string>
     <string name="pesan">Pesan</string>
+    <string name="field_detail">Detail Lapangan</string>
+    <string name="booking_information">Informasi Pemesanan</string>
 
 
 </resources>

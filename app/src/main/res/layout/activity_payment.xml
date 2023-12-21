@@ -25,7 +25,9 @@
                 android:layout_marginStart="10dp"
                 android:text="@string/payment"
                 android:textColor="@color/white"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:fontFamily="sans-serif-condensed"
+                android:textStyle="bold" />
 
         </androidx.appcompat.widget.Toolbar>
 

@@ -1,11 +1,13 @@
 package com.bangkit.ch2_ps178_android.view.detail
 
 import android.content.Intent
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import com.bangkit.ch2_ps178_android.R
@@ -68,10 +70,8 @@ class DetailActivity : AppCompatActivity() {
 
             }
         }
-        var tombol_back = findViewById<FloatingActionButton>(R.id.fab_back)
-        tombol_back.setOnClickListener {
-            onBackPressed()
-        }
+
+        setupActionBar()
     }
 
     fun set_txtContent( obj_el : TextView, data :String  ){
@@ -98,6 +98,17 @@ class DetailActivity : AppCompatActivity() {
         intent.putExtra("passing", data_row_obj)
         startActivity(intent)
         overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
+    }
+
+    private fun setupActionBar() {
+        val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.tb_detail_back)
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+        supportActionBar?.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.orange700)))
+        toolbar.setNavigationOnClickListener {
+            onBackPressed()
+        }
     }
 
 }
