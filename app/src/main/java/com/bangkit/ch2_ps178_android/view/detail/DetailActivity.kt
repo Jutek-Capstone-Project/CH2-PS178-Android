@@ -62,7 +62,6 @@ class DetailActivity : AppCompatActivity() {
                 //Event pesan
                 var btn_pesan : Button = findViewById(R.id.btn_pesan)
                 btn_pesan.setOnClickListener {
-
                     direct_event_obj( data_row )
                 }
 
@@ -95,7 +94,7 @@ class DetailActivity : AppCompatActivity() {
 
         //BaseModel.swal(requireContext(), "s")
         val intent = Intent(this, Booking::class.java)
-        intent.putExtra("passing", data_row_obj)
+        intent.putExtra("data_paramObj", data_row_obj)
         startActivity(intent)
         overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
     }

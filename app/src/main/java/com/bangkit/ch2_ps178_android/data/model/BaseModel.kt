@@ -14,9 +14,11 @@ class BaseModel {
 
     companion object {
         var BASE_URL : String
+        var paramName : String
 
         init{
             this.BASE_URL = "https://silent-fuze-400506.et.r.appspot.com/"
+            this.paramName = "data_paramObj"
         }
 
 
@@ -79,6 +81,8 @@ class BaseModel {
 
             sweetAlertDialog.show()
         }
+
+
 
 
 

@@ -17,6 +17,8 @@
         android:theme="@style/Theme.CH2PS178Android"
         tools:targetApi="31">
 
+
+
         <activity
             android:name=".view.booking.Booking"
             android:exported="false"
@@ -34,7 +36,7 @@
         <activity
             android:name=".view.profile.about.AboutUsActivity"
             android:exported="false" />
-6
+
         <activity
             android:name=".view.detail.DetailActivity"
             android:exported="false" />

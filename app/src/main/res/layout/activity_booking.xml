@@ -195,12 +195,12 @@
                                 android:paddingTop="5dp">
 
 
-                                <TextView
+                                <AutoCompleteTextView
                                     android:id="@+id/jam_checkin"
                                     android:layout_width="100dp"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="sans-serif-condensed"
-                                    android:text="08.00"
+                                    android:text="Pilih disini"
                                     android:textSize="17sp" />
 
                                 <ImageView
@@ -249,12 +249,13 @@
                                 android:paddingTop="5dp">
 
 
-                                <TextView
+                                <AutoCompleteTextView
                                     android:id="@+id/jam_checkout"
                                     android:layout_width="100dp"
                                     android:layout_height="wrap_content"
+                                    android:layout_weight="1"
                                     android:fontFamily="sans-serif-condensed"
-                                    android:text="10.00"
+                                    android:text="Pilih disini"
                                     android:textSize="17sp" />
 
                                 <ImageView
@@ -416,7 +417,7 @@
 
 
                                 <TextView
-                                    android:id="@+id/time_checkout"
+                                    android:id="@+id/harga"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="sans-serif-condensed"
@@ -478,7 +479,10 @@
 
                     </LinearLayout>
 
+
+
                 </LinearLayout>
+
 
                 <LinearLayout
 
@@ -515,14 +519,30 @@
 
             </GridLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/catatan"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                </TextView>
+
+            </LinearLayout>
+
             <Button
-                android:id="@+id/btn_pesan"
+                android:id="@+id/btn_pesan_now"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="end"
                 android:layout_marginTop="30dp"
                 android:fontFamily="sans-serif-condensed"
-                android:text="@string/pesan"
+                android:text="Pesan Sekarang"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
