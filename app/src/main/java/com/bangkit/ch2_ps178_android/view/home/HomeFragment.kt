@@ -31,7 +31,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class HomeFragment : Fragment() {
 
-    private lateinit var progressBar: ProgressBar
     private var hasContentLoaded = false
 
     override fun onCreateView(

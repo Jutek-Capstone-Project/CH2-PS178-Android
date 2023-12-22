@@ -140,6 +140,9 @@
     <string name="bank_negara_indonesia_bni">Bank Negara Indonesia (BNI)</string>
     <string name="bank_rakyat_indonesia_bri">Bank Rakyat Indonesia (BRI)</string>
     <string name="bank_syariah_indonesia_bsi">Bank Syariah Indonesia (BSI)</string>
+    <string name="home_background">home_background</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
