@@ -14,7 +14,7 @@
     <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
         <item name="android:background">@drawable/rounded_searchview_background</item>
         <item name="android:iconifiedByDefault">false</item>
-        <item name="android:queryHint">Cari lapangan, yuk?</item>
+        <item name="android:queryHint">Cari lapangan, yuk!</item>
         <item name="queryBackground">@android:color/transparent</item>
         <item name="searchIcon">@color/orange700</item>
         <item name="closeIcon">@color/white</item>
