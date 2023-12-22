@@ -214,11 +214,11 @@
                 <ImageView
                     android:id="@+id/imageView"
                     android:layout_width="30dp"
-                    android:layout_height="20dp"
+                    android:layout_height="30dp"
                     android:layout_marginStart="0dp"
                     android:layout_weight="1"
-                    android:src="@drawable/ic_arrow_right"
-                    app:srcCompat="@drawable/ic_arrow_right" />
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/ic_arrow_down" />
             </LinearLayout>
 
             <com.facebook.shimmer.ShimmerFrameLayout

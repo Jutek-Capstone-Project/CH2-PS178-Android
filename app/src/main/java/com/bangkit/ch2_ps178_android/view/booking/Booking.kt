@@ -23,6 +23,9 @@ import android.widget.LinearLayout
 import android.widget.ListView
 import android.widget.PopupWindow
 import android.widget.TextView
+
+import androidx.appcompat.widget.Toolbar
+
 import androidx.cardview.widget.CardView
 import com.bangkit.ch2_ps178_android.R
 import com.bangkit.ch2_ps178_android.data.dataclass.MainAdapterRow
@@ -88,6 +91,7 @@ class Booking : AppCompatActivity() {
 
             modalCatatan.hide()
         }
+
 
 
 
@@ -170,6 +174,16 @@ class Booking : AppCompatActivity() {
 
     }
 
+    private fun setupActionBar() {
+        val toolbar: Toolbar = findViewById(R.id.tb_booking_back)
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+        supportActionBar?.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.orange700)))
+        toolbar.setNavigationOnClickListener {
+            onBackPressed()
+        }
+    }
 
 
 
