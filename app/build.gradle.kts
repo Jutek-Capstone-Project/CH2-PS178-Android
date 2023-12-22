@@ -101,4 +101,7 @@ dependencies {
 
     //Shimmer Animation
     implementation ("com.facebook.shimmer:shimmer:0.5.0")
+
+    //Date
+    implementation ("com.jakewharton.threetenabp:threetenabp:1.3.0")
 }

@@ -44,7 +44,7 @@ class MainAdapter(private val onItem_click: (MainAdapterRow, CardView) -> Unit) 
             val jarak_data: String = item.lat
             val harga_data: String = item.price
             val rating_data: String = item.rating
-            val lokasi_data: String = item.kabupaten
+            val lokasi_data: String = item.kecamatan
 
 
             //Menetapkan aturan UI, dan di terapkan pada object Holder di method onBindViewHolder

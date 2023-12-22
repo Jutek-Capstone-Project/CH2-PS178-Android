@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Parcel
@@ -23,6 +24,7 @@ import android.widget.LinearLayout
 import android.widget.ListView
 import android.widget.PopupWindow
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 
 import androidx.appcompat.widget.Toolbar
 
@@ -35,7 +37,11 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.google.android.material.textfield.TextInputEditText
 import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+import java.time.format.FormatStyle
 import java.util.Calendar
+import java.util.Date
 import java.util.Locale
 
 
@@ -131,13 +137,16 @@ class Booking : AppCompatActivity() {
                 set_txtContent(findViewById(R.id.daerah), data_row.kecamatan)
                 set_txtContent(findViewById(R.id.jarak),  data_row.lat)
                 set_txtContent(findViewById(R.id.harga),  "Rp " + data_row.price)
+                set_txtContent(findViewById(R.id.tanggal),  get_tanggal())
 
 
                 //Event pesan
                 //Modal pesan syarat
                 var modalSyarat = ModalSyarat(this)
+
                 var btn_pesan_now : Button = findViewById(R.id.btn_pesan_now)
                 btn_pesan_now.setOnClickListener {
+
                     modalSyarat.show()
                     modalSyarat.btn_pesan.setOnClickListener {
 
@@ -154,17 +163,22 @@ class Booking : AppCompatActivity() {
                         val catatan : TextInputEditText = modalCatatan.dialog.findViewById( R.id.edit_catatan_pemesanan )
                         val data_catatan : String = catatan.text.toString()
 
-                        //Ambil input check in dan checkout
+                        //Ambil input tanggal check in dan checkout
+                        var tanggal = findViewById<TextView>( R.id.tanggal )
+                        var tanggalData = tanggal.text.toString()
                         var checkInData: String = jam_checkin.text.toString()
                         var checkOutData : String = jam_checkout.text.toString()
 
+//                        BaseModel.swal(this, "tanggal " + tanggalData + " in " + checkInData + " out " + checkOutData)
                         var data_obj = PassingData(
                             data_row,
                             InputModal(  data_nama, data_email, data_nomor, data_catatan ),
+                            tanggalData,
                             checkInData,
                             checkOutData
                         )
 
+//                        BaseModel.swal(this, "in " + checkInData + " out " + checkOutData  )
                         direct_event_obj( data_obj )
                     }
                 }
@@ -262,8 +276,21 @@ class Booking : AppCompatActivity() {
         finish()
     }
 
-}
 
+    fun get_tanggal() : String{
+        // Inisialisasi ThreeTenABP
+        val tanggalHariIni: Date = Date()
+
+        // Menentukan format yang diinginkan
+        val formatter = SimpleDateFormat("EEEE, dd MMMM yyyy", Locale("id-ID"))
+
+        // Memformat tanggal hari ini dengan format yang diinginkan
+        val tanggalDalamFormat: String = formatter.format(tanggalHariIni)
+
+        return tanggalDalamFormat
+    }
+
+}
 
 open class ModalSetting{
 
@@ -402,22 +429,27 @@ data class InputModal(
 data class PassingData(
     val mainAdapterRow: MainAdapterRow,
     val dataInput: InputModal,
+    val tanggal: String = "",
     val checkIn: String = "",
-    val chekOut: String = ""
+    val checkOut: String = "",
+
 ) : Parcelable {
     // Implementasi Parcelable
     constructor(parcel: Parcel) : this(
         parcel.readParcelable(MainAdapterRow::class.java.classLoader)!!,
         parcel.readParcelable(InputModal::class.java.classLoader)!!,
         parcel.readString() ?: "",
-        parcel.readString() ?: ""
+        parcel.readString() ?: "",
+        parcel.readString() ?: "",
     )
+
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeParcelable(mainAdapterRow, flags)
         parcel.writeParcelable(dataInput, flags)
         parcel.writeString(checkIn)
-        parcel.writeString(chekOut)
+        parcel.writeString(tanggal)
+        parcel.writeString(checkOut)
     }
 
     override fun describeContents(): Int {
