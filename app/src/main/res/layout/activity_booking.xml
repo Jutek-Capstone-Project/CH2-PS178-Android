@@ -79,7 +79,8 @@
                     android:fontFamily="sans-serif-condensed"
                     android:text="@string/field_name"
                     android:textSize="32sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:layout_marginTop="20dp"/>
 
             </LinearLayout>
 

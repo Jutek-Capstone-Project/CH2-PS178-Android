@@ -184,8 +184,7 @@ class Booking : AppCompatActivity() {
                 }
             }
         }
-
-
+        setupActionBar()
     }
 
     private fun setupActionBar() {

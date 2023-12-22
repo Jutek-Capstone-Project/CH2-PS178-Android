@@ -2,6 +2,7 @@ package com.bangkit.ch2_ps178_android.view.main
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.bangkit.ch2_ps178_android.R
@@ -23,6 +24,8 @@ class MainActivity : AppCompatActivity(), ProfileFragment.LogoutListener {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
         supportActionBar?.hide()
 
